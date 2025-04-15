@@ -1,32 +1,61 @@
-const path = require("path"); // Импортируем модуль "path" для работы с путями файлов
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./src/index.js", // Точка входа для сборки проекта
-
-  output: {
-    filename: "bundle.js", // Имя выходного файла сборки
-    path: path.resolve(__dirname, "dist"), // Путь для выходного файла сборки
+  entry: {
+    main: "./src/index.js",
+    cats: "./src/cats.js",
   },
-
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "[name].js",
+    publicPath: "",
+  },
+  mode: "development",
+  devServer: {
+    static: path.resolve(__dirname, "./dist"),
+    open: true,
+    compress: true,
+    port: 8080,
+  },
   module: {
     rules: [
       {
-        test: /\.css$/, // Регулярное выражение для обработки файлов с расширением .css
-        use: ["style-loader", "css-loader"], // Загрузчики, используемые для обработки CSS-файлов
+        test: /\.js$/,
+        use: "babel-loader",
+        exclude: "/node_modules/",
+      },
+      {
+        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
+        type: "asset/resource",
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+            },
+          },
+          "postcss-loader",
+        ],
       },
     ],
   },
-
   plugins: [
     new HtmlWebpackPlugin({
+      filename: "index.html",
       template: "./src/index.html",
     }),
+    new HtmlWebpackPlugin({
+      filename: "cats.html",
+      template: "./src/cats.html",
+    }),
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin(),
   ],
-
-  devServer: {
-    open: true, // Автоматически открывать браузер
-  },
-
-  mode: "development", // Режим сборки
 };

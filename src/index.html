@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-    <title>PetShow</title>
+    <title>ZooMark</title>
   </head>
   <body>
       <section id="banner">
@@ -12,37 +11,36 @@
           <header id="header">
             <div class="header-wrapper">
               <a href="/"
-                ><img class="logo" src="img/logo.svg" alt="logo"
-              /></a>
+                >
+                <img class="logo" src="<%=require('./img/logo.svg')%>" alt="logo">
+              </a>
               <nav class="header-nav">
                 <ul class="header-list">
                   <li class="header-item">
                     <div class="header-btn">
-                      <a href="#">Акции</a>
-                      <img src="img/header-arrow.svg" alt="arrow">
+                      <a href="./cats.html">Cats</a>
+                      <img src="<%=require('./img/header-arrow.svg')%>" alt="arrow">
                     </div>
-                    <div class="overlay">
                       <ul class="header-modal">
-                        <li><a href="#cats">Cats</a></li>
-                        <li><a href="/dogs">Dogs</a></li>
-                        <li><a href="/birds">Birds</a></li>
                       </ul>
+                  </li>
+                  <li class="header-item">
+                    <div class="header-btn">
+                      <a href="./cats.html">Dogs</a>
                     </div>
                   </li>
-                  <li><a href="#">Собаки</a></li>
-                  <li><a href="#">Кошки</a></li>
-                  <li><a href="#">Птицы</a></li>
+                  <li><a href="#">Birds</a></li>
                 </ul>
               </nav>
-              <button href="#" class="btn btn_pulse">View all pets</button>
+              <button href="#" class="btn btn_pulse">Show all</button>
             </div>
           </header>
           <main>
             <section class="main-banner">
               <div class="column">
                   <div class="notification">
-                    <img src="img/edit-brightness.png" alt="star" />
-                    <p>New pets. <a href="#">Learn more</a></p>
+                    <img class="logo" src="<%=require('./img/edit-brightness.png')%>" alt="star">
+                    <p>Разнообразие пород. <a href="#">Читать статью</a></p>
                   </div>
                   <h1>The best place to get your pet</h1>
                   <p class="descr">
@@ -96,7 +94,7 @@
             <section id="advantages">
               <div class="advantages_top">
                 <div class="notif">
-                  <img class="eye" src="img/Icon awesome-eye.png" alt="eye" />
+                  <img class="logo" src="<%=require('./img/Icon awesome-eye.png')%>"  alt="eye">
                   <p>Exceptur</p>
                 </div>
                 <h1>Get actionable insights from</h1>
@@ -115,8 +113,12 @@
                   <img class="slide" src="https://img.freepik.com/free-vector/cute-cat-sleeping-cup-coffee-cartoon-illustration-animal-drink-concept-isolated-flat-cartoon-style_138676-2723.jpg?t=st=1734066622~exp=1734070222~hmac=0d4a10fe6fd586e0ae8293347f35fd4f3c6f322506322a1892077df848d583d2&w=1060" alt="icon" />
                   <img class="slide" src="https://img.freepik.com/free-vector/cute-pug-dog-photographer-holding-camera-cartoon-vector-icon-illustration-animal-technology-isolated_138676-10243.jpg?t=st=1734066540~exp=1734070140~hmac=4df81aadc75face80c2824beea84c4227b458737571b8f44d58a18fd9c65c151&w=1060" alt="icon" />
                 </div>
-                <button class="prev_button"><img src="img/arrow-left.svg" aria-label="Посмотреть предыдущий слайд" alt="btn_left"></button>
-                <button class="next_button"><img src="img/arrow-right.svg" aria-label="Посмотреть следующий слайд"  alt="btn_right"></button>
+                <button class="prev_button">
+                  <img class="logo" src="<%=require('./img/arrow-left.svg')%>" aria-label="Посмотреть предыдущий слайд" alt="btn_left">
+                </button>
+                <button class="next_button">
+                  <img class="logo" src="<%=require('./img/arrow-right.svg')%>"  aria-label="Посмотреть следующий слайд" alt="btn_right">
+                </button>
               </div>
             </section>
           </main>
@@ -127,9 +129,11 @@
               <li><a href="">Contact Us</a></li>
             </ul>
             <ul class="footer_list social_icon">
-              <li><a href="#"><img src="img/social-youtube.svg" alt="youtube"></a></li>
-              <li><a href="#"><img src="img/social-youtube.svg" alt="youtube"></a></li>
-              <li><a href="#"><img src="img/social-message.svg" alt="youtube"></a></li>
+              <li><a href="#">
+                <img src="<%=require('./img/social-youtube.svg')%>" alt="youtube">
+              </a></li>
+              <li><a href="#"><img src="<%=require('./img/social-youtube.svg')%>" alt="youtube"></a></li>
+              <li><a href="#"><img src="<%=require('./img/social-youtube.svg')%>" alt="youtube"></a></li>
             </ul>
           </footer>
         </div>
@@ -160,6 +164,17 @@
       href="https://fonts.googleapis.com/css2?family=Forum&display=swap"
       rel="stylesheet"
     />
-    <script src="index.js"></script>
+    <template id="template">
+      <li>
+        
+      </li>
+
+      <li>
+        
+      </li>
+      <li>
+        
+      </li>
+    </template>
   </body>
 </html>
