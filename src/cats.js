@@ -6,7 +6,7 @@ function createCards(data) {
   data.forEach((card) => {
     const { id, title, url } = card;
     const cardItem = `
-    <li class='open'>
+    <li class='card-item open'>
       <img src="${url}"/>
       <a href='#'>${title}</a>
     </li>`;

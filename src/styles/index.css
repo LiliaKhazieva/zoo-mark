@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Agu+Display&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:wght@400;700;900&display=swap");
 
-@import url("../screens/cats.css");
+@import url("./cats.css");
 
 :root {
   --color-accent: #e35b31;
@@ -137,8 +137,8 @@ main {
 }
 
 .header-modal {
-  position: absolute;
   display: none;
+  position: absolute;
   top: 30px;
   left: -20px;
   z-index: 1;

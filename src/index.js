@@ -63,13 +63,15 @@ function showPrevSlide() {
 }
 
 function updateSlider() {
-  slides.forEach((slide, index) => {
-    if (index === slideIndex) {
-      slide.classList.add(current);
-    } else {
-      slide.classList.remove(current);
-    }
-  });
+  if (slides.length > 0) {
+    slides.forEach((slide, index) => {
+      if (index === slideIndex) {
+        slide.classList.add(current);
+      } else {
+        slide.classList.remove(current);
+      }
+    });
+  }
 }
 updateSlider();
 
