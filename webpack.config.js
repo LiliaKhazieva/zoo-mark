@@ -7,6 +7,7 @@ module.exports = {
   entry: {
     main: './src/index.js',
     cats: './src/cats/cats.js',
+    test: './src/quiz/quiz.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -54,6 +55,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'cats.html',
       template: './src/cats/cats.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'quiz.html',
+      template: './src/quiz/quiz.html',
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
