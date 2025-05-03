@@ -6,8 +6,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = {
   entry: {
     main: './src/index.js',
+    quiz: './src/quiz/quiz.js',
     cats: './src/cats/cats.js',
-    test: './src/quiz/quiz.js',
+    dogs: './src/dogs/dogs.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -55,6 +56,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'cats.html',
       template: './src/cats/cats.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'dogs.html',
+      template: './src/dogs/dogs.html',
     }),
     new HtmlWebpackPlugin({
       filename: 'quiz.html',

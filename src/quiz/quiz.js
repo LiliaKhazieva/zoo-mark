@@ -25,6 +25,15 @@ const quizData = [
   },
 ]
 
+const world = [
+  'бенгальская кошка.',
+  'котопес',
+  'сибирская кошка',
+  'немецкая овчарка',
+]
+
+let randomItem = world[Math.floor(Math.random() * world.length)]
+
 const quizLength = quizData.length
 let currentQuestion = 0
 
@@ -61,7 +70,7 @@ function checkAnswer() {
 
 function finishQuiz() {
   quizCount.style.display = 'none'
-  questionText.innerHTML = `Вам подходит бенгальская кошка. <a class="href-color" href="cats.html">Посмотреть каталог питомцев</a>`
+  questionText.innerHTML = `Вам подходит ${randomItem}. <a class="href-color" href="cats.html">Посмотреть каталог питомцев</a>`
   listAnswers.style.display = 'none'
   nextButton.style.display = 'none'
 }

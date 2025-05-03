@@ -1,30 +1,47 @@
 import { catsData } from '../data/catsData'
 
-const cards = document.querySelector('.cards')
+const list = document.querySelector('.cards')
 
-function createCards(data) {
-  data.forEach((card) => {
-    const { id, title, url } = card
-    const cardItem = `
-    <li class='card-item card-open'>
-      <img src="${url}"/>
-      <a href='#'>${title}</a>
-    </li>`
-    cards.insertAdjacentHTML('beforeend', cardItem)
+/// create cards for pages
+const renderProductCard = (product) => {
+  const li = document.createElement('li')
+  li.classList.add('card-item', 'card-open')
+
+  li.innerHTML = `
+        <span>Нажми на меня</span>
+            <img src='${product.url}'/>
+            <a href='#'>${product.title}</a>`
+
+  return li
+}
+
+const appendProductCard = (product, container) => {
+  container.append(product)
+}
+
+const renderProductCards = (arr, container) => {
+  arr.forEach((product) => {
+    const card = renderProductCard(product)
+    appendProductCard(card, container)
   })
+}
 
-  const popup = document.querySelector('.popup')
-  const img = document.querySelector('.popup img')
-  const titlePopup = document.querySelector('.popup h2')
+renderProductCards(catsData, list)
 
-  const open = document.querySelectorAll('.card-open')
-  const overlay = document.querySelector('.popup-overlay')
+const popup = document.querySelector('.popup')
+const img = document.querySelector('.popup img')
+const titlePopup = document.querySelector('.popup h2')
+const descriptionPopup = document.querySelector('.popup p')
 
-  open.forEach((button) => {
+const open = document.querySelectorAll('.card-open')
+const overlay = document.querySelector('.popup-overlay')
+
+const popupCreate = (arr) => {
+  open.forEach((button, index) => {
     button.addEventListener('click', (e) => {
-      img.src = data[0].url
-      titlePopup.innerText = data[0].title
-
+      img.src = arr[index].url
+      titlePopup.textContent = arr[index].title
+      descriptionPopup.textContent = arr[index].description
       e.preventDefault()
       overlay.classList.add('active')
       popup.classList.add('active')
@@ -44,4 +61,4 @@ function createCards(data) {
   })
 }
 
-createCards(catsData)
+popupCreate(catsData)
