@@ -27,19 +27,20 @@ const quizData = [
 
 const world = [
   'бенгальская кошка.',
-  'котопес',
+  'корги',
   'сибирская кошка',
   'немецкая овчарка',
 ]
 
 let randomItem = world[Math.floor(Math.random() * world.length)]
 
-const quizLength = quizData.length
 let currentQuestion = 0
 
 function startQuiz() {
-  quizCount.innerText = `Вопрос ${quizData[currentQuestion].number} из ${quizData.length}`
-  questionText.innerText = quizData[currentQuestion].question
+  if (quizCount) {
+    quizCount.innerText = `Вопрос ${quizData[currentQuestion].number} из ${quizData.length}`
+    questionText.innerText = quizData[currentQuestion].question
+  }
 
   btns.forEach((button, index) => {
     button.innerText = quizData[currentQuestion].answers[index]
@@ -68,13 +69,13 @@ function checkAnswer() {
   }
 }
 
+nextButton && nextButton.addEventListener('click', () => checkAnswer())
+
 function finishQuiz() {
   quizCount.style.display = 'none'
   questionText.innerHTML = `Вам подходит ${randomItem}. <a class="href-color" href="cats.html">Посмотреть каталог питомцев</a>`
   listAnswers.style.display = 'none'
   nextButton.style.display = 'none'
 }
-
-nextButton.addEventListener('click', () => checkAnswer())
 
 startQuiz()

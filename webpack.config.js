@@ -8,7 +8,6 @@ module.exports = {
     main: './src/index.js',
     quiz: './src/quiz/quiz.js',
     cats: './src/cats/cats.js',
-    dogs: './src/dogs/dogs.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

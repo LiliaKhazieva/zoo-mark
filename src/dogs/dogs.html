@@ -1,54 +1,92 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Forum&display=swap"
+    rel="stylesheet"
+  />
     <title>ZooMark</title>
   </head>
   <body>
-      <section id="banner">
         <div class="container">
           <header id="header">
             <div class="header-wrapper">
-              <a href="/">
-                <img class="logo" src="<%=require('../images/logo.svg')%>" alt="logo">
+              <a href="./index.html">
+                <img
+                  class="logo"
+                  src="<%=require('../images/logo.svg')%>"
+                  alt="logo"
+                />
               </a>
               <nav class="header-nav">
                 <ul class="header-list">
                   <li class="header-item">
-                    <div class="header-btn">
-                      <a href="cats.html">Cats</a>
-                    </div>
-                      <ul class="header-modal">
-                        <li>
-                          <a href='dogs.html'>
-                            <img src="${src}"/>
-                          </a>
-                        </li>
-                        <li>
-                          <a href='dogs.html'>
-                            <img src="${src}"/>
-                          </a>
-                        </li>
-                        <li>
-                          <a href='dogs.html'>
-                            <img src="${src}"/>
-                          </a>
-                        </li>
-                      </ul>
+                    <a href="cats.html">Кошки</a>
+                    <ul class="header-modal">
+                      <li>
+                        <a href="cats.html">
+                          Породы
+                          <img
+                            src="https://images.unsplash.com/photo-1515002246390-7bf7e8f87b54?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          />
+                        </a>
+                      </li>
+                      <li>
+                        <a href="cats.html">
+                          Уход
+                          <img
+                            src="https://images.unsplash.com/photo-1442291928580-fb5d0856a8f1?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          />
+                        </a>
+                      </li>
+                      <li>
+                        <a href="cats.html">
+                          Страна происхождения
+                          <img
+                            src="https://images.unsplash.com/photo-1592508908964-c9a7200b9115?q=80&w=2937&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          />
+                        </a>
+                      </li>
+                    </ul>
                   </li>
                   <li class="header-item">
-                    <div class="header-btn">
-                      <a href="cats.html">Dogs</a>
-                    </div>
+                    <a href="dogs.html">Собаки</a>
+                    <ul class="header-modal">
+                      <li>
+                        <a href="dogs.html">
+                          Породы
+                          <img
+                            src="https://images.unsplash.com/photo-1592028616810-88480a45e406?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          />
+                        </a>
+                      </li>
+                      <li>
+                        <a href="dogs.html">
+                          Уход
+                          <img
+                            src="https://images.unsplash.com/photo-1731949594994-739b3ec954ef?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjI4fHxkb2d8ZW58MHx8MHx8fDI%3D"
+                          />
+                        </a>
+                      </li>
+                      <li>
+                        <a href="dogs.html">
+                          Страна происхождения
+                          <img
+                            src="https://images.unsplash.com/photo-1600232943169-3fe49a6f4071?q=80&w=2830&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          />
+                        </a>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
               </nav>
-              <button href="#" class="btn-header btn-pulse">Show all</button>
+              <a href="cats.html" class="btn-header btn-pulse">Show all</a>
             </div>
           </header>
           <main>
-            <h2 class="heading">Dogs Collection</h2>
+            <h2 class="heading">Cats Collection</h2>
             <section class="cards-block">
               <ul class="cards">
               </ul>
@@ -56,8 +94,8 @@
                 <div class="popup">
                   <button class="close">x</button>
                   <img src="https://images.unsplash.com/photo-1472053217156-31b42df2319c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="pet">
-                  <h2></h2>
-                  <p></p>
+                  <h2>кошка 1</h2>
+                  <p>Description</p>
                 </div>
               </div>
             </section>
@@ -94,21 +132,7 @@
             </ul>
           </footer>
         </div>
-      </section>
 </div>
     </div>
-    <!-- libs -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Forum&display=swap"
-      rel="stylesheet"
-    />
-    <template id="template">
-      <div class="popup">
-        <button class="close">x</button>
-        <img src="https://images.unsplash.com/photo-1472053217156-31b42df2319c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="pet">
-        <h2>кошка 1</h2>
-        <p>Description</p>
-      </div>
-    </template>
   </body>
 </html>

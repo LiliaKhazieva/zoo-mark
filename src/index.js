@@ -34,9 +34,6 @@ let slideIndex = 1
 const prevButton = document.querySelector('.prev-button')
 const nextButton = document.querySelector('.next-button')
 
-nextButton.addEventListener('click', showNextSlide)
-prevButton.addEventListener('click', showPrevSlide)
-
 function showNextSlide() {
   slideIndex = (slideIndex + 1) % slideCount
   updateSlider()
@@ -58,3 +55,6 @@ function updateSlider() {
     })
   }
 }
+
+nextButton && nextButton.addEventListener('click', showNextSlide)
+prevButton && prevButton.addEventListener('click', showPrevSlide)

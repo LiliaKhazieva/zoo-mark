@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:wght@400;700;900&display=swap');
 
-@import url('./cats.css');
+@import url('./pets.css');
 
 @import url('./quiz.css');
 
@@ -199,10 +199,10 @@ img {
 }
 
 .btn-header {
-  cursor: pointer;
   background-color: #db9999;
   padding: 10px 20px;
   border-radius: 20px;
+  font-size: 16px;
   color: #fff;
   @media (max-width: 600px) {
     display: none;
