@@ -10,7 +10,7 @@ function renderProductCard(product) {
 
   li.innerHTML = `
         <span>Нажми на меня</span>
-        <img src='${product.url}'/>
+        <img src='${product.url}' width='300' height='200'/>
         <a href='#'>${product.title}</a>`
 
   return li
@@ -58,18 +58,21 @@ function popupCreate(arr) {
       popup.classList.add('active')
     })
   })
-  const close = document.querySelector('.close')
-  close.addEventListener('click', () => {
-    overlay.classList.remove('active')
-    popup.classList.remove('active')
-  })
+  const closeBtn = document.querySelector('.close-btn')
 
-  document.addEventListener('click', (e) => {
-    if (e.target === overlay) {
+  closeBtn &&
+    closeBtn.addEventListener('click', () => {
       overlay.classList.remove('active')
       popup.classList.remove('active')
-    }
-  })
+    })
+
+  document &&
+    document.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        overlay.classList.remove('active')
+        popup.classList.remove('active')
+      }
+    })
 }
 
 function joisePopup() {

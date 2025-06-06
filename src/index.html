@@ -10,6 +10,9 @@
     <title>ZooMark</title>
   </head>
   <body>
+    <div id="preloader">
+      <div class="spinner"></div>
+    </div>
     <div class="container">
       <header id="header">
         <div class="header-wrapper">
@@ -82,11 +85,12 @@
               </li>
             </ul>
           </nav>
-          <a href="cats.html" class="btn-header btn-pulse">Show all</a>
+          <a href="catalog.html" class="btn-header btn-pulse">В каталог</a>
         </div>
       </header>
       <main>
         <section class="main-banner">
+          <div class="banner-mobile"></div>
           <div class="column">
             <h1>
               Узнайте, какая порода<br />
@@ -166,7 +170,7 @@
               aspernatur ipsam.
             </p>
           </div>
-          <div class="advantages-bottom">
+          <div class="advantages-wrapper">
             <button class="prev-button">
               <img
                 src="<%=require('./images/arrow-left.svg')%>"

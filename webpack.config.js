@@ -8,6 +8,7 @@ module.exports = {
     main: './src/index.js',
     quiz: './src/quiz/quiz.js',
     cats: './src/cats/cats.js',
+    catalog: './src/catalog/catalog.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -49,8 +50,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
       template: './src/index.html',
+      filename: 'index.html',
     }),
     new HtmlWebpackPlugin({
       filename: 'cats.html',
@@ -63,6 +64,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'quiz.html',
       template: './src/quiz/quiz.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'catalog.html',
+      template: './src/catalog/catalog.html',
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),

@@ -3,9 +3,10 @@ const quizCount = document.querySelector('.quiz-content span')
 
 const questionText = document.querySelector('.quiz-title')
 
-const nextButton = document.querySelector('.quiz-btn')
-const btns = document.querySelectorAll('.quiz-answer')
+const buttons = document.querySelectorAll('.quiz-btn')
+const nextButton = buttons[1]
 const listAnswers = document.querySelector('.quiz-answers')
+const btns = document.querySelectorAll('.quiz-answer')
 
 const quizData = [
   {

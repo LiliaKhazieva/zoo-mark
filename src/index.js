@@ -1,5 +1,10 @@
 import './styles/index.css'
 
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader')
+  preloader.style.display = 'none'
+})
+
 // scrolls
 
 window.addEventListener('scroll', function () {

@@ -2,14 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:wght@400;700;900&display=swap');
 
 @import url('./pets.css');
-
 @import url('./quiz.css');
-
-:root {
-  --color-accent: #e35b31;
-  --color-text: #000000;
-  --color-bg: #ffff;
-}
+@import url('./catalog.css');
 
 * {
   background: transparent;
@@ -21,10 +15,8 @@
 }
 
 body {
-  background: linear-gradient(90deg, #a1c9b3, #dfc3c3, #db9999);
+  background: linear-gradient(90deg, #a1c9b3, #dfc3c3, #db9999) no-repeat;
   font-size: 20px;
-  min-width: 320px;
-  min-height: 100vh;
   padding: 0 20px;
   width: 100%;
   height: 100%;
@@ -65,6 +57,45 @@ img {
   object-fit: cover;
 }
 
+main {
+  min-height: 500px;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #a1c9b3, #dfc3c3, #db9999) no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.spinner {
+  background-image: url('../images/paw.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80px;
+  height: 80px;
+  border: 5px solid #9e9b9b;
+  border-top-color: #1a1a1a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .container {
   background-color: #fff;
   box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
@@ -81,8 +112,7 @@ img {
   gap: 20px;
   max-width: 600px;
   margin: 0 auto;
-  padding-bottom: 70px;
-  padding-top: 70px;
+  padding: 70px 10px;
 }
 
 /* header  */
@@ -116,7 +146,6 @@ img {
 .header-wrapper .logo {
   height: 45px;
   width: 45px;
-  transition: transform 0.5s ease;
   @media (max-width: 600px) {
     height: 30px;
     width: 30px;
@@ -124,7 +153,7 @@ img {
 }
 
 .header-wrapper .logo:hover {
-  animation: logoRotate 1s ease-in infinite;
+  animation: logoRotate 1s linear infinite;
 }
 
 .header-list {
@@ -159,7 +188,7 @@ img {
 
 .header-modal li {
   position: relative;
-  padding: 30px 150px 30px 20px;
+  padding: 50px 250px 50px 20px;
   margin: 10px 0;
   border-radius: 12px;
   opacity: 0;
@@ -220,16 +249,31 @@ img {
 }
 
 .main-banner {
-  margin: 0 40px;
+  position: relative;
+  height: 80vh;
   display: flex;
   align-items: center;
 }
+.banner-mobile {
+  opacity: 0.5;
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image: url('https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 .column {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 50%;
+  padding: 0 40px;
   @media (max-width: 800px) {
     gap: 10px;
   }
@@ -248,16 +292,21 @@ img {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 40px;
   line-height: 1.2;
-  @media (max-width: 1050px) {
-    font-size: calc(16px + 16 * (100vw - 320px) / 960);
-  }
+  font-size: calc(16px + 16 * (100vw - 320px) / 960);
 }
 
 .column .description {
   color: #5d5d5d;
   font-size: 25px;
-  @media (max-width: 1000px) {
-    font-size: calc(10px + 15 * (100vw - 320px) / 960);
+  font-size: calc(10px + 15 * (100vw - 320px) / 960);
+}
+
+@media (max-width: 600px) {
+  .banner-mobile {
+    display: block;
+  }
+  .column .description {
+    color: #000;
   }
 }
 
@@ -274,6 +323,7 @@ img {
   text-align: center;
   border: none;
   color: #000;
+  background-color: #fff;
   transition: all 0.4s ease;
   border-radius: 16px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
@@ -391,23 +441,26 @@ img {
 
 /* advantages  */
 
-.advantages-bottom {
+#advantages {
+  margin-bottom: 80px;
+}
+
+.advantages-wrapper {
   display: flex;
   align-items: center;
-  text-align: center;
   justify-content: center;
-  gap: 50px;
-  padding-bottom: 70px;
-  @media (max-width: 600px) {
-    display: none;
-  }
+  gap: 10px;
 }
 
 .advantages-slider {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 30px;
   transition: transform 1s ease;
+  @media (max-width: 650px) {
+    gap: 10px;
+  }
 }
 
 .advantages-slider img {
@@ -418,6 +471,19 @@ img {
     width: 150px;
     height: 150px;
   }
+  @media (max-width: 800px) {
+    width: 100px;
+    height: 100px;
+  }
+  @media (max-width: 600px) {
+    width: 80px;
+    height: 80px;
+  }
+  @media (max-width: 500px) {
+    border-radius: 20px;
+    width: 60px;
+    height: 60px;
+  }
 }
 
 .advantages-slider .current {
@@ -427,15 +493,27 @@ img {
     width: 200px;
     height: 200px;
   }
+  @media (max-width: 600px) {
+    width: 120px;
+    height: 120px;
+  }
+  @media (max-width: 500px) {
+    width: 80px;
+    height: 80px;
+  }
 }
 
-.prev-button,
-.next-button {
+.prev-button img,
+.next-button img {
   width: 50px;
   height: 50px;
   @media (max-width: 1000px) {
     width: 30px;
     height: 30px;
+  }
+  @media (max-width: 600px) {
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -443,15 +521,16 @@ img {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 50px;
+  justify-content: space-around;
+  margin: 0 10px;
+  padding-bottom: 20px;
 }
 
 .footer-list {
   display: flex;
   gap: 30px;
   margin-top: 20px;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -464,19 +543,22 @@ img {
   transition: all 0.4s ease;
 }
 
+@media (max-width: 500px) {
+  .footer-list li a {
+    font-size: 16px;
+  }
+}
+
 .social-icon li:hover {
   background-color: #7e6faa;
 }
 
 @keyframes logoRotate {
   0% {
-    transform: scale(1.2) rotate(0deg);
-  }
-  30% {
-    transform: scale(1.2) rotate(-20deg);
+    transform: scale(1.2) rotate(20deg);
   }
   50% {
-    transform: scale(1.2) rotate(0deg);
+    transform: scale(1.2) rotate(-20deg);
   }
   100% {
     transform: scale(1.2) rotate(20deg);

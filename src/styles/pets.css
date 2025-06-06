@@ -40,10 +40,17 @@
 }
 
 .card-item img {
-  height: 300px;
   width: 380px;
+  height: 300px;
   object-fit: cover;
   transition: all 0.3s ease;
+}
+
+@media (max-width: 500px) {
+  .card-item img {
+    width: 250px;
+    height: 200px;
+  }
 }
 
 .card-item:hover img {
@@ -59,7 +66,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: rgba(0, 0, 0, 0.5);
   pointer-events: none;
 }
@@ -67,7 +74,7 @@
 .popup-overlay.active {
   opacity: 1;
   pointer-events: all;
-  transition: 0.5s all;
+  transition: 0.5s opacity;
 }
 
 .popup {
@@ -75,18 +82,74 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  width: 500px;
+  width: 80vw;
+  height: 90vh;
   padding: 25px;
   background-color: #fff;
   transition: 0.5s all;
 }
 
+.close-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+
+.close-btn span {
+  font-size: 30px;
+}
 .popup.active {
   transform: translate(-50%, -50%) scale(1);
   transition: 0.5s all;
 }
 
+.popup img {
+  object-fit: contain;
+  height: 50vh;
+}
+
 .popup h2 {
+  text-align: center;
+  font-size: 3vw;
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+.popup p {
+  font-size: 22px;
+}
+
+@media (max-width: 1200px) {
+  .popup img {
+    object-fit: contain;
+    height: 50vh;
+  }
+
+  .popup h2 {
+    text-align: center;
+    font-size: 4vw;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .popup p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .popup img {
+    object-fit: contain;
+    height: 30vh;
+  }
+
+  .popup h2 {
+    text-align: center;
+    font-size: 5vw;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .popup p {
+    font-size: 13px;
+  }
 }

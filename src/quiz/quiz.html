@@ -6,33 +6,8 @@
     <title>ZooMark</title>
   </head>
   <body>
-    <section id="banner">
+    <section>
       <div class="container">
-        <header id="header">
-          <div class="header-wrapper">
-            <a href="/">
-              <img
-                class="logo"
-                src="<%=require('../images/logo.svg')%>"
-                alt="logo"
-              />
-            </a>
-            <nav class="header-nav">
-              <ul class="header-list">
-                <li class="header-item">
-                  <a href="./cats.html">Кошки</a>
-                  <ul class="header-modal"></ul>
-                </li>
-                <li class="header-item">
-                  <a href="./dogs.html">Собаки</a>
-                </li>
-              </ul>
-            </nav>
-            <button href="./cats/cats.html" class="btn-header btn-pulse">
-              Посмотреть всех
-            </button>
-          </div>
-        </header>
         <main>
           <section class="quiz">
             <div class="quiz-content">
@@ -43,7 +18,10 @@
                 <li class="quiz-answer"></li>
                 <li class="quiz-answer"></li>
               </ul>
-              <button class="quiz-btn"><a href="#">Далее > </a></button>
+              <div class="quiz-btn-wrapper">
+                <a class="quiz-btn quiz-btn-main" href="/">На главную</a>
+                <a class="quiz-btn" href="#">Далее</a>
+              </div>
             </div>
           </section>
         </main>
