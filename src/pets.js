@@ -110,12 +110,11 @@ function checkCheckbox(checkbox, arr) {
       return 0
     })
     renderProductCards(arrSorted, list)
-    console.log('Checkbox is checked')
+    popupCreate(arrSorted)
   } else {
     li.forEach((item) => {
       item.remove()
     })
     renderProductCards(allPetsArr, list)
-    console.log('Checkbox is not checked')
   }
 }
