@@ -3,7 +3,6 @@
 
 @import url('./pets.css');
 @import url('./quiz.css');
-@import url('./catalog.css');
 
 * {
   background: transparent;
@@ -88,14 +87,6 @@ main {
   animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .container {
   background-color: #fff;
   box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
@@ -171,6 +162,9 @@ main {
 .header-item {
   position: relative;
   padding-bottom: 10px;
+  @media (max-width: 600px) {
+    padding-bottom: 0;
+  }
 }
 
 .header-item:hover .header-modal {
@@ -234,7 +228,8 @@ main {
   font-size: 16px;
   color: #fff;
   @media (max-width: 600px) {
-    display: none;
+    font-size: 12px;
+    padding: 10px 10px;
   }
 }
 
@@ -265,6 +260,9 @@ main {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  @media (max-width: 600px) {
+    display: block;
+  }
 }
 
 .column {
@@ -299,13 +297,7 @@ main {
   color: #5d5d5d;
   font-size: 25px;
   font-size: calc(10px + 15 * (100vw - 320px) / 960);
-}
-
-@media (max-width: 600px) {
-  .banner-mobile {
-    display: block;
-  }
-  .column .description {
+  @media (max-width: 600px) {
     color: #000;
   }
 }
@@ -350,7 +342,7 @@ main {
   }
 }
 
-.btn-active {
+.banner-buttons .btn-active {
   background-color: #db9999;
 }
 
@@ -409,14 +401,6 @@ main {
   padding-bottom: 100px;
 }
 
-.explore-cards img {
-  width: 100px;
-  height: 100px;
-  background-color: #fff;
-  border-radius: 50%;
-  border: 1px #b68cce solid;
-}
-
 .explore-card {
   width: 200px;
   height: 300px;
@@ -429,14 +413,26 @@ main {
   justify-content: center;
   gap: 20px;
   transition: all 0.4s ease;
-  transform: scale(1);
 }
 
 .explore-card:hover {
   color: #fff;
-  transform: scale(1.1);
+  transform: scale(1.1) rotateY(-360deg);
   background-color: #a375bd;
-  transition: all 0.4s ease;
+  transition: all 0.2s ease;
+  background-image: url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2943&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: end;
+  background-repeat: no-repeat;
+  animation: opacity 0.5s linear;
+}
+.explore-card img {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px #b68cce solid;
+  animation: opacity 0.5s linear;
 }
 
 /* advantages  */
@@ -450,6 +446,8 @@ main {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  max-height: 200px;
+  min-height: 80px;
 }
 
 .advantages-slider {
@@ -467,6 +465,8 @@ main {
   border-radius: 30px;
   width: 200px;
   height: 200px;
+  transition: all 0.1s ease;
+  animation: opacity 0.5s linear;
   @media (max-width: 1000px) {
     width: 150px;
     height: 150px;
@@ -551,6 +551,17 @@ main {
 
 .social-icon li:hover {
   background-color: #7e6faa;
+}
+
+/* animation */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes logoRotate {

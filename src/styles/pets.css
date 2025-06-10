@@ -11,7 +11,7 @@
 
 .heading {
   font-size: 36px;
-  margin: 20px 40px 0;
+  margin-left: 40px;
 }
 
 .card-item {
@@ -44,10 +44,7 @@
   height: 300px;
   object-fit: cover;
   transition: all 0.3s ease;
-}
-
-@media (max-width: 500px) {
-  .card-item img {
+  @media (max-width: 500px) {
     width: 250px;
     height: 200px;
   }
@@ -87,6 +84,9 @@
   padding: 25px;
   background-color: #fff;
   transition: 0.5s all;
+  @media (max-width) {
+    height: 70vh;
+  }
 }
 
 .close-btn {
@@ -107,6 +107,14 @@
 .popup img {
   object-fit: contain;
   height: 50vh;
+  @media (max-width: 1200px) {
+    object-fit: contain;
+    height: 50vh;
+  }
+  @media (max-width: 1000px) {
+    object-fit: contain;
+    height: 30vh;
+  }
 }
 
 .popup h2 {
@@ -114,42 +122,89 @@
   font-size: 3vw;
   margin-bottom: 20px;
   margin-top: 20px;
-}
-
-.popup p {
-  font-size: 22px;
-}
-
-@media (max-width: 1200px) {
-  .popup img {
-    object-fit: contain;
-    height: 50vh;
-  }
-
-  .popup h2 {
+  @media (max-width: 1200px) {
     text-align: center;
     font-size: 4vw;
     margin-bottom: 20px;
     margin-top: 20px;
   }
-  .popup p {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .popup img {
-    object-fit: contain;
-    height: 30vh;
-  }
-
-  .popup h2 {
+  @media (max-width: 1000px) {
     text-align: center;
     font-size: 5vw;
     margin-bottom: 20px;
     margin-top: 20px;
   }
-  .popup p {
+}
+
+.popup p {
+  font-size: 20px;
+  @media (max-width: 1200px) {
+    font-size: 18px;
+  }
+  @media (max-width: 1000px) {
+    font-size: 16px;
+  }
+  @media (max-width: 600px) {
     font-size: 13px;
   }
+}
+
+.wrapper-heading {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-radius: 0 !important;
+  @media (max-width: 810px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+  @media (max-width: 500px) {
+    padding: 20px 20px;
+  }
+}
+
+.wrapper-heading h2 {
+  font-size: 36px;
+  @media (max-width: 810px) {
+    font-size: 30px;
+  }
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 0 0 0 20px;
+  flex-wrap: wrap;
+  @media (max-width: 850px) {
+    margin: 0;
+  }
+}
+
+.sort label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+input[name='radioButton'] {
+  display: none;
+}
+
+input[name='radioButton'] + label {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  border: #a19e9e 1px solid;
+  border-radius: 5px;
+}
+
+input[name='radioButton']:checked + label {
+  background: #db9999;
 }

@@ -74,7 +74,7 @@ nextButton && nextButton.addEventListener('click', () => checkAnswer())
 
 function finishQuiz() {
   quizCount.style.display = 'none'
-  questionText.innerHTML = `Вам подходит ${randomItem}. <a class="href-color" href="cats.html">Посмотреть каталог питомцев</a>`
+  questionText.innerHTML = `Вам подходит ${randomItem}. <a class="href-color" href="catalog.html">Посмотреть каталог питомцев</a>`
   listAnswers.style.display = 'none'
   nextButton.style.display = 'none'
 }

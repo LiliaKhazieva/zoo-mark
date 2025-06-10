@@ -1,30 +1,35 @@
 import './styles/index.css'
 
-window.addEventListener('load', () => {
-  const preloader = document.getElementById('preloader')
-  preloader.style.display = 'none'
-})
+// preloader
+
+const preloader = document.getElementById('preloader')
+
+preloader &&
+  window.addEventListener('load', () => {
+    preloader.style.display = 'none'
+  })
 
 // scrolls
 
-window.addEventListener('scroll', function () {
-  if (scrollY > 80) {
-    document.querySelector('#header').classList.add('header-scroll')
-  } else {
-    document.querySelector('#header').classList.remove('header-scroll')
-  }
-})
+window &&
+  window.addEventListener('scroll', function () {
+    if (scrollY > 80) {
+      document.querySelector('#header').classList.add('header-scroll')
+    } else {
+      document.querySelector('#header').classList.remove('header-scroll')
+    }
+  })
 
 // toggle button
 
 function toggleButton() {
   const btns = document.querySelectorAll('.btn')
   for (let button of btns) {
-    button.addEventListener('click', function () {
+    button.addEventListener('click', () => {
       btns.forEach((index) => {
         index.classList.remove('btn-active')
       })
-      this.classList.toggle('btn-active')
+      button.classList.toggle('btn-active')
     })
   }
 }
