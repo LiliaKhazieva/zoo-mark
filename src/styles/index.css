@@ -256,12 +256,13 @@ main {
   width: 100%;
   height: 100%;
   z-index: 0;
-  background-image: url('https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-image: url('https://img.freepik.com/free-photo/gray-kitty-with-monochrome-wall-her_23-2148955130.jpg?semt=ais_hybrid&w=740&q=80');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     display: block;
+    background-position: 70%;
   }
 }
 
@@ -274,8 +275,6 @@ main {
   padding: 0 40px;
   @media (max-width: 800px) {
     gap: 10px;
-  }
-  @media (max-width: 600px) {
     width: 100%;
     text-align: center;
     align-items: center;
@@ -383,7 +382,7 @@ main {
 
 .column-img {
   animation: opacity 2s ease;
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     display: none;
   }
 }
